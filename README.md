@@ -30,7 +30,7 @@ nimble release
 ### Config Nimdow
 
 ```bash
-~/.config/config.toml
+~/.config/nimdow/config.toml
 
 ```
 Run the status bar on startup
@@ -48,6 +48,8 @@ barFonts = [
     "FontAwesome:size=14:antialias=true"
   ]
 ```
+
+Open NimdowStatus.nim and make the edits you want, the either use rebuild.sh to kill the current runing status and re-compile Nimdowstatus
 
 ### ToDo
 
