@@ -71,14 +71,14 @@ clickRegion = 5
 exec = [
   "xsetroot -cursor_name left_ptr",
   "~/.config/nimdow/nimdowstatus/NimdowStatus",
-  "/usr/lib/xfce4/notifyd/xfce4-notifyd"
-  "/usr/lib/polkit-gnome/plokit-gnome-authentication-agent-1",
-  "picom"
-  "numlockx"
-  "xfce4-power-manager",
-  "nm-applet",
-  "volumeicon",
-  "blueberry-tray",
+  #"/usr/lib/xfce4/notifyd/xfce4-notifyd",
+  #"/usr/lib/polkit-gnome/plokit-gnome-authentication-agent-1",
+  #"picom"
+  #"numlockx"
+  #"xfce4-power-manager",
+  #"nm-applet",
+  #"volumeicon",
+  #"blueberry-tray",
   "nitrogen --restore",
  # "udiskie",
 ]
@@ -242,8 +242,8 @@ exec = [
   modifiers = [ "super" ]
 
 # Example monitor settings:
- [monitors]
-   [monitors.default.tags]
+#  [monitors]
+#    [monitors.default.tags]
    #1.displayString = "󰲠"
    #2.displayString = "󰲢"
    #3.displayString = "󰲤"
@@ -254,15 +254,15 @@ exec = [
    #8.displayString = "󰲮"
    #9.displayString = "󰲰"
 
-   1.displayString = "󰎤"
-   2.displayString = "󰎧"
-   3.displayString = "󰎪"
-   4.displayString = "󰎭"
-   5.displayString = "󰎱"
-   6.displayString = "󰎳"
-   7.displayString = "󰎶"
-   8.displayString = "󰎹"
-   9.displayString = "󰎼"
+  #  1.displayString = "󰎤"
+  #  2.displayString = "󰎧"
+  #  3.displayString = "󰎪"
+  #  4.displayString = "󰎭"
+  #  5.displayString = "󰎱"
+  #  6.displayString = "󰎳"
+  #  7.displayString = "󰎶"
+  #  8.displayString = "󰎹"
+  #  9.displayString = "󰎼"
   # Set the number of master windows for ALL monitors.
   # all.numMasterWindows = 2
   # all.defaultMasterWidthPercentage = 60

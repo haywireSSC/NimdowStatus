@@ -1,3 +1,6 @@
+import strutils, os, strformat
+import ../segment
+
 const
   MEMINFO_PATH: string = "/proc/meminfo"
   GIB_DIVISOR: float = 1024.0 * 1024.0
@@ -10,14 +13,14 @@ proc getMemInfo(key: string): int =
       return parts[1].strip().split()[0].parseInt()
   return 0
 
-proc getMemory(): string =
+proc getMemory*(s: Segment): string =
   if not fileExists(MEMINFO_PATH):
     return "Memory info not available"
 
   let
     iMemTotal = getMemInfo("MemTotal")
     iMemFree = getMemInfo("MemFree")
-    iMemAvailable = getMemInfo("MemAvailable")
+    #iMemAvailable = getMemInfo("MemAvailable")
     iBuffers = getMemInfo("Buffers")
     iCached = getMemInfo("Cached")
     iShmem = getMemInfo("Shmem")
@@ -30,7 +33,7 @@ proc getMemory(): string =
     # iUsedMem = iMemTotal - iMemAvailable
 
   if iUsedMem >= 1048576: # Check to see if used mem is 1GB or greater
-    result = fmt"{MEMORY_ICON} {iUsedMem.float / GIB_DIVISOR:0.2f} GiB"
+    result = fmt"{iUsedMem.float / GIB_DIVISOR:0.2f} GiB"
   else:
-    result = fmt"{MEMORY_ICON} {iUsedMem div MIB_DIVISOR} MiB"
+    result = fmt"{iUsedMem div MIB_DIVISOR} MiB"
 
